@@ -1,0 +1,188 @@
+.reader-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.hero {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h1 {
+    font-size: 3rem;
+    color: #f97316;
+    margin-bottom: .5rem;
+    font-weight: bold;
+  }
+
+  p {
+    color: #6b7280;
+  }
+}
+
+.input-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem;
+}
+
+.actions {
+  padding: .75rem 1.5rem;
+
+  border: none;
+  border-radius: 12px;
+
+  cursor: pointer;
+
+  background: #f97316;
+  color: white;
+
+  font-weight: 600;
+
+  transition: .2s;
+
+  &:hover {
+    transform: translateY(-2px);
+    background: #ea580c;
+  }
+  
+}
+
+.reader-container {
+
+  height: 250px;
+
+  border-radius: 24px;
+
+  background: #ffffff;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.08);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 2rem;
+}
+
+.word-display {
+
+  font-size: 4rem;
+  font-weight: 700;
+
+  color: #111827;
+
+  user-select: none;
+}
+
+.controls {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 1.5rem;
+
+  margin-bottom: 2rem;
+}
+
+.speed-control {
+
+  display: flex;
+  flex-direction: column;
+
+  gap: .75rem;
+
+  label {
+    font-weight: 600;
+  }
+
+  input[type="range"] {
+    width: 100%;
+  }
+}
+
+.buttons {
+
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+
+  button {
+
+    padding: .75rem 1.5rem;
+
+    border: none;
+    border-radius: 12px;
+
+    cursor: pointer;
+
+    background: #f97316;
+    color: white;
+
+    font-weight: 600;
+
+    transition: .2s;
+
+    &:hover {
+      transform: translateY(-2px);
+      background: #ea580c;
+    }
+  }
+}
+
+.progress-header {
+
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: .5rem;
+}
+
+.progress-bar {
+
+  height: 12px;
+
+  background: #e5e7eb;
+
+  border-radius: 999px;
+
+  overflow: hidden;
+}
+
+.progress-fill {
+
+  height: 100%;
+
+  width: 0%;
+
+  background: linear-gradient(
+    90deg,
+    #f97316,
+    #fb923c
+  );
+
+  transition: width .2s ease;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,.08);
+
+  h3 {
+    font-size: 2rem;
+    color: #f97316;
+    margin-bottom: .25rem;
+  }
+}

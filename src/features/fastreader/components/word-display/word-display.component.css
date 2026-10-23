@@ -1,0 +1,46 @@
+.spritz-container {
+  position: relative;
+  width: 100%;
+  height: 220px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.guide-line {
+  position: absolute;
+
+  width: 20px;
+  height: 120px;
+
+  background: #f974162f;
+}
+
+.word-wrapper {
+
+  display: flex;
+
+  font-size: 4rem;
+  font-weight: 800;
+
+  font-family: Inter, sans-serif;
+
+  min-width: 700px;
+}
+
+.left {
+  width: 50%;
+  text-align: right;
+  color: #27292c;
+}
+
+.focus {
+  color: #f97316;
+  width: fit-content;
+}
+
+.right {
+  width: 50%;
+  color: #111827;
+}

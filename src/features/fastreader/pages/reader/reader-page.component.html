@@ -1,0 +1,105 @@
+<div class="reader-page">
+
+  <header class="hero">
+    <h1>RapidReader</h1>
+    <p>Lee más rápido palabra a palabra</p>
+  </header>
+
+  <section class="reader-container">
+
+    <app-word-display
+      [currentWord]="readerService.currentWord()">
+    </app-word-display>
+
+  </section>
+
+  <section class="stats">
+
+    <div class="stat-card">
+      <h3>{{ readerService.words().length }}</h3>
+      <span>Palabras</span>
+    </div>
+
+    <div class="stat-card">
+      <h3>{{ estimatedTime() }}</h3>
+      <span>Minutos</span>
+    </div>
+
+    <div class="stat-card">
+      <h3>{{ readerService.wpm() }}</h3>
+      <span>WPM</span>
+    </div>
+
+  </section>
+
+  <section class="controls">
+
+    <div class="speed-control">
+
+      <label>
+        Velocidad: {{ readerService.wpm() }} WPM
+      </label>
+
+      <input
+        type="range"
+        min="100"
+        max="1000"
+        step="50"
+        [value]="readerService.wpm()"
+        (input)="updateSpeed($event)"
+      />
+
+    </div>
+
+    <div class="buttons">
+
+      <button (click)="play()">▶ Reproducir</button>
+
+      <button (click)="pause()">⏸ Pausar</button>
+
+      <button (click)="reset()">⏹ Reiniciar</button>
+
+    </div>
+
+  </section>
+
+  <section class="progress">
+
+    <div class="progress-header">
+      <span>Progreso</span>
+      <span>{{ progress() }}%</span>
+    </div>
+
+    <div class="progress-bar">
+      <div
+        class="progress-fill"
+        [style.width.%]="progress()">
+      </div>
+    </div>
+
+  </section>
+
+  <section class="input-section">
+
+    <input
+      #fileInput
+      type="file"
+      accept=".txt,.pdf,.epub"
+      hidden
+      (change)="onFileSelected($event)">
+
+    <button class="actions" (click)="fileInput.click()">
+    Cargar libro
+    </button>
+
+    <button class="actions" (click)="loadExample()">
+    Cargar ejemplo
+    </button>
+
+    @if (selectedFileName) {
+      <p>Archivo seleccionado: {{ selectedFileName }}</p>
+    }
+
+  </section>
+
+</div>
